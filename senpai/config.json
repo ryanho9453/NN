@@ -1,0 +1,38 @@
+{
+    "general": {
+        "steps": 6000,
+        "label_class": 10,
+        "early_stop": false,
+        "ealry_stop_loss": 0.005,
+        "model_path": "saved_models/saved_model/model.ckpt",
+        "tensor_log": "saved_models/saved_model/logs/",
+        "saved_model_path": "saved_models/saved_model/"
+    },
+    "models": {
+        "choose_model": "conv",
+        "conv": {
+            "conv_base_filters": 64,
+            "kernel_size": [3, 3],
+            "fc_neu_num": 128,
+            "keep_prob": 0.5,
+            "learn_rate": 0.0005,
+            "label_class": 10
+        }
+    },
+    "processing": {
+        "reader": {
+            "batch_size": 50,
+            "resize": 1,
+            "train_folder": "/Users/pzn666/Documents/data_enlight/data/captcha/train_data/",
+            "eval_folder": "/Users/pzn666/Documents/data_enlight/data/captcha/eval_data/"
+        },
+        "evaler": {
+            "model_path": "saved_models/saved_model/",
+            "meta_path": "saved_models/saved_model/model.ckpt.meta"
+        },
+        "predictor": {
+            "model_path": "/Users/pzn666/Documents/data_enlight/projects/text_detector/captcha/saved_models/saved_model/",
+            "meta_path": "/Users/pzn666/Documents/data_enlight/projects/text_detector/captcha/saved_models/saved_model/model.ckpt.meta"
+        }
+    }
+}

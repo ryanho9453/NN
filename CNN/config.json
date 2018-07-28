@@ -1,0 +1,43 @@
+{
+    "general": {
+        "steps": 6000,
+        "label_class": 10,
+        "early_stop": false,
+        "ealry_stop_loss": 0.005,
+        "model_path": "saved_models/saved_model/model.ckpt",
+        "tensor_log": "saved_models/saved_model/logs/",
+        "saved_model_path": "saved_models/saved_model/"
+    },
+    "models": {
+        "choose_model": "conv",
+        "conv": {
+            "l1_size": 16,
+            "l2_size": 36,
+            "filter_size": 5,
+            "fc_size": 128,
+            "learn_rate": 0.0005
+        }
+    },
+    "processing": {
+        "data_spec": {
+            "img_size": 28,
+            "num_channels": 3,
+            "num_classes": 10
+        },
+        "reader": {
+            "batch_size": 50,
+            "resize": 1,
+            "where_label_is": "folder_with_label",
+            "train_folder": "/Users/ryanho/Documents/python/NN/mnist_as_jpg/train/",
+            "test_folder": "/Users/ryanho/Documents/python/NN/mnist_as_jpg/test/"
+        },
+        "evaler": {
+            "model_path": "saved_models/saved_model/",
+            "meta_path": "saved_models/saved_model/model.ckpt.meta"
+        },
+        "predictor": {
+            "model_path": "/Users/pzn666/Documents/data_enlight/projects/text_detector/captcha/saved_models/saved_model/",
+            "meta_path": "/Users/pzn666/Documents/data_enlight/projects/text_detector/captcha/saved_models/saved_model/model.ckpt.meta"
+        }
+    }
+}
